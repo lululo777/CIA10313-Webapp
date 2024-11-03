@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d4c4d5;
+}
+
+.navbar-brand {
+    font-size: 2.5rem; 
+    margin-right: 40px; 
+    padding-bottom: 15px; 
+}
+
+nav.navbar{
+	 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	 position:fixed;
+	 top:0;
+	 width:100%;
+}
+
+
+/* 側邊欄樣式 */
+.sidebar {
+	min-height:100vh;
+    background-color: #ece7ec;
+    padding: 15px;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 3px; 
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 770px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+
+/* 主要內容區 */
+.main-content {
+    padding: 15px;
+    background-color: #d4c4d5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    
+}
+
+/* Footer 樣式 */
+.footer {
+    width: 100%;
+    background-color: #ffffff; 
+    text-align: center;
+    padding: 15px;
+    color: #757474;
+    /* margin-top: 20px; */
+    position: relative;
+    bottom: 0;
+
+}
+
+.container{
+    margin:0;
+    margin-top:90px;
+  
+}
+
+/* 版面配置比例 */
+.container .row {
+    display: flex;
+ 
+    /* margin-bottom: 0; */
+}
+
+.sidebar {
+    margin-top: 0;
+    flex: 1; 
+    margin-bottom: 0;
+}
+
+.main-content {
+    margin-top: 0;
+    flex: 5; 
+}
+
+
+/* table樣式 */
+table.table{
+    margin-top: 20px;
+    background: white;
+  
+}
+
+
+th, td {
+    vertical-align: middle; 
+    padding: 8px; 
+    word-wrap: break-word; 
+}
+
+th{
+	text-align: center; 
+}
+
+/* 按紐樣式 */
+button.btn{
+    background-color: rgb(95, 64, 142);
+    color: white;
+    border:rgb(95, 64, 142);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   
+}
+
+button.btn:hover{
+    background-color:rgb(151, 122, 194);
+    color: rgb(240, 237, 237);
+   
+}
+
+/* 表單樣式 */
+form.addform.on{
+    background-color:#ece7ec;
+    padding: 20px;
+    width: 500px;
+    margin:0 auto;
+    display: block;
+}
+
+form.addform{
+display: none;
+}
+
+form.queryform.on{
+    background-color:#ece7ec;
+    padding: 20px;
+    width: 500px;
+    margin:0 auto;
+    display: block;
+}
+
+form.queryform{
+    display: none;
+}
+
+
+#product-name{
+ width: 250px;   
+}
+
+#product-info{
+    height: 100px;
+    width:400px;
+}
+
+#product-price{
+    width: 250px;
+}
+
+#product-quantity{
+    width: 250px;
+}
+
+#product-img{
+    width: 250px;
+}
+
+div.text-center{
+    text-align: center;
+}
+
+#choose-status{
+    width: 250px;
+}
+
+div.mb-3{
+    margin-left: 35px;
+}
+
+/*預設不存在的更新輸入框*/
+.none {
+    display: none;
+}
+
+
+/*查詢框樣式 */
+div.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 控制標題、輸入框和按鈕之間的間距 */
+    margin-bottom: 20px; /* 控制每組查詢方式之間的間距 */
+}
+
+label.title {
+    font-weight: 600;
+    margin-right: 10px;
+    line-height: 38px;
+}
+
+input.input-value {
+    width: 150px;
+    height: 38px; /* 確保輸入框和按鈕高度一致 */
+    padding: 5px;
+}
+
+button.query {
+    height: 38px; /* 確保按鈕和輸入框高度一致 */
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.query-container {
+    margin-left: 50px;
+}
+
+
+
+
