@@ -90,11 +90,18 @@ $("button.delete").on("click",function(){
 	                 }, 2000, "swing", function(){
 	                   $(this).closest("tr").remove();
 	                 });
+					 
+					 setTimeout(function(){
+	 					alert("已刪除商品!");
+	 				 },2500);
 	       
 	       })
 	}
 	
 });	
+
+
+
 
 
 //單一商品的移除

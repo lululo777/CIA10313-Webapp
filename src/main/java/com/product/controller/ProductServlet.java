@@ -20,6 +20,8 @@ import javax.servlet.http.Part;
 
 import org.json.JSONObject;
 
+import com.product.hibernate.HibernateProductService;
+import com.product.hibernate.HibernateProductVO;
 import com.product.model.*;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 5 * 1024 * 1024, maxRequestSize = 5 * 5 * 1024 * 1024)
@@ -83,6 +85,10 @@ public class ProductServlet extends HttpServlet {
 			ProductService service =new ProductService();
 			ProductVO product = service.getOneProduct(prodno); //傳入已將String型別轉為integer型別的產品編號，進行查詢，回傳一個productVO的物件
 //			showPic(product, res);//呼叫顯示圖片的方法，將傳送物件和res
+			
+//			HibernateProductService s =new HibernateProductService();
+//			HibernateProductVO product = s.getOneProduct(prodno);
+			
 			
 //			若查詢不到該筆資料(回傳null)，進行錯誤處理
 			if(product==null) {

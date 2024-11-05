@@ -1,4 +1,4 @@
-package com.product.model;
+package com.product.hibernate;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -7,51 +7,74 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 
-public class ProductVO {
-	
-	private Integer prod_no;
+@Entity
+@Table(name="product")
 
+public class HibernateProductVO {
+
+	@Id //PK
+	@Column(name="prod_no")
+	@GeneratedValue(strategy =GenerationType.IDENTITY)//自增
+	private Integer prod_no;
+	
+	@Column(name="ft_id") 
 	private Integer ft_id;
 	
+	@Column(name="prod_name")
 	private String prod_name;
 	
+	@Column(name="prod_desc")
 	private String prod_desc;
-		
+	
+	@Column(name="price")
 	private Integer price;
 	
+	@Column(name="available_quantity")
 	private Integer available_quantity;
 	
+	@Column(name="sold_quantity")
 	private Integer sold_quantity;
 	
+	@Column(name="rating")
 	private Integer rating;
 
+	@Column(name="rating_count")
 	private Integer rating_count;
 	
+	@Column(name="view_count")
 	private Integer view_count;
 	
+	@Column(name="listed_time",updatable = false)
 	private Timestamp listed_time;
 	
+	@Column(name="status",nullable=false)
 	private Byte status;
 	
-	private ProductImgVO productimgVO;
+	@Transient
+	@OneToMany(mappedBy ="image_no" ,cascade =CascadeType.ALL)
+	//一對多的主表格作設定
+	private Set <HibernateProductImgVO> productimgVO;
 
 //	一個無參數建構子
-	public ProductVO() {
+	public HibernateProductVO() {
 		super();
 	}
 
 //	一格有參數建構子
-	public ProductVO(Integer prod_no, Integer ft_id, String prod_name, String prod_desc, Integer price,
+	public HibernateProductVO(Integer prod_no, Integer ft_id, String prod_name, String prod_desc, Integer price,
 			Integer available_quantity, Integer sold_quantity, Integer rating_count, Integer view_count,
 			Timestamp listed_time, Byte status) {
 		super();
@@ -68,14 +91,23 @@ public class ProductVO {
 		this.status = status;
 	}
 
-	public ProductImgVO getProductImgVO() {
+	
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+
+	public Set<HibernateProductImgVO> getProductimgVO() {
 		return productimgVO;
 	}
-	
-	public void setProductImgVO(ProductImgVO productimgVO) {
+
+	public void setProductimgVO(Set<HibernateProductImgVO> productimgVO) {
 		this.productimgVO = productimgVO;
 	}
-	
+
 	public Integer getProd_no() {
 		return prod_no;
 	}

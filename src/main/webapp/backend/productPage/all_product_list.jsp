@@ -122,7 +122,7 @@
                      <c:forEach var="product" items="${list}">
                         <tr class="tbody">
                        
-                            <td class="prodno" name="prodno">${product.prod_no}</th>
+                            <th class="prodno" name="prodno">${product.prod_no}</th>
                             <td class="prodname" name="prodname">${product.prod_name}</td>
                   
                             <td class="prodinfo" name="prodinfo">${product.prod_desc}</td>
